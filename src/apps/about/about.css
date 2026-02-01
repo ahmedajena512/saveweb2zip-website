@@ -268,9 +268,7 @@ a.left-panel__card__row:hover .left-panel__card__text {
     width: 50px
 }
 
-.mobile-device .about-paragraph-icon-col {
-    display: none !important
-}
+
 
 .mobile-device .about-paragraph-text {
     font-size: 16.5px;
@@ -284,93 +282,45 @@ a.left-panel__card__row:hover .left-panel__card__text {
     margin-bottom: 18px
 }
 
-.about-paragraph-icon-col {
-    align-items: flex-start;
-    display: flex;
-    flex: none;
-    justify-content: center;
-    min-width: 44px;
-    overflow: visible;
-    transition: width .18s ease, min-width .18s ease, opacity .18s ease;
-    width: 44px
-}
 
-.about-paragraph-icon {
-    display: block;
-    height: 60px;
-    padding-left: 18px;
-    transition: width .18s ease, height .18s ease, transform .18s ease, opacity .18s ease;
-    width: 60px
-}
+
+
 
 .about-paragraph-text {
     display: block;
     flex: 1;
     font-size: 15.5px;
-    padding-left: 48px;
+    padding-left: 0;
     transition: padding-left .18s ease
 }
 
 @media (max-width:680px) {
-    .about-paragraph-icon-col {
-        min-width: 36px;
-        width: 36px
-    }
-    .about-paragraph-icon {
-        height: 48px;
-        padding-left: 12px;
-        width: 48px
-    }
+
+
     .about-paragraph-text {
-        padding-left: 32px
+        padding-left: 0
     }
 }
 
 @media (max-width:620px) {
-    .about-paragraph-icon-col {
-        min-width: 28px;
-        width: 28px
-    }
-    .about-paragraph-icon {
-        height: 40px;
-        padding-left: 10px;
-        width: 40px
-    }
+
+
     .about-paragraph-text {
-        padding-left: 24px
+        padding-left: 0
     }
 }
 
 @media (max-width:560px) {
-    .about-paragraph-icon-col {
-        min-width: 20px;
-        opacity: .65;
-        width: 20px
-    }
-    .about-paragraph-icon {
-        height: 32px;
-        opacity: .75;
-        padding-left: 8px;
-        transform: scale(.95);
-        width: 32px
-    }
+
+
     .about-paragraph-text {
-        padding-left: 18px
+        padding-left: 0
     }
 }
 
 @media (max-width:520px) {
-    .about-paragraph-icon-col {
-        min-width: 0;
-        opacity: 0;
-        width: 0
-    }
-    .about-paragraph-icon {
-        height: 0;
-        opacity: 0;
-        padding-left: 0;
-        width: 0
-    }
+
+
     .about-paragraph-text {
         padding-left: 0
     }

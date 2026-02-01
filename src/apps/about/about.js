@@ -91,12 +91,7 @@ document["addEventListener"]("DOMContentLoaded", async () => {
         }));
     } else loader && isMinimized && loader["setProgress"](0x2d);
     if (aboutData) {
-        const assetPaths = [];
-        for (let _0x2d2d29 = 0x1; _0x2d2d29 <= 0x5; _0x2d2d29++) {
-            const _0x3b8882 = aboutData['p' + _0x2d2d29];
-            _0x3b8882 && assetPaths["push"](transformAssetPath(_0x3b8882));
-        }
-        loader && assetPaths["length"] > 0x0 ? await loader['loadAssets'](assetPaths, 0x32, 0x37) : loader && loader["setProgress"](0x37);
+        loader && loader["setProgress"](0x37);
         const bioContent = document["querySelector"](".section_text");
         if (bioContent) {
             bioContent['innerHTML'] = '';
@@ -109,12 +104,8 @@ document["addEventListener"]("DOMContentLoaded", async () => {
             paragraphs["forEach"]((_0x16525c, _0x1b95f0) => {
                 const _0x5cf170 = document["createElement"]('div');
                 _0x5cf170['className'] = "about-paragraph-row";
-                const _0x700007 = document['createElement']("span");
-                _0x700007["className"] = "about-paragraph-icon-col";
-                const _0x1affb0 = document["createElement"]('img');
-                _0x1affb0["className"] = 'about-paragraph-icon', _0x1affb0["draggable"] = !0x1, _0x1affb0["alt"] = 'Paragraph\x20icon\x20' + (_0x1b95f0 + 0x1), _0x1affb0['src'] = transformAssetPath(aboutData['p' + (_0x1b95f0 + 0x1)]), _0x700007["appendChild"](_0x1affb0);
                 const _0x581993 = document["createElement"]("span");
-                _0x581993["className"] = 'about-paragraph-text', /[<>]/["test"](_0x16525c) ? _0x581993["innerHTML"] = sanitizeHTML(_0x16525c) : _0x581993["textContent"] = _0x16525c, _0x5cf170["appendChild"](_0x700007), _0x5cf170["appendChild"](_0x581993), bioContent["appendChild"](_0x5cf170);
+                _0x581993["className"] = 'about-paragraph-text', /[<>]/["test"](_0x16525c) ? _0x581993["innerHTML"] = sanitizeHTML(_0x16525c) : _0x581993["textContent"] = _0x16525c, _0x5cf170["appendChild"](_0x581993), bioContent["appendChild"](_0x5cf170);
             });
         }
         if (skillsCard && aboutData['skills'] && aboutData['skillsIcons'] && !isMinimized) {
