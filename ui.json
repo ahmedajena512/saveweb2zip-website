@@ -1,0 +1,22 @@
+{
+  "mockComments": {
+    "Project One": [
+      {
+        "username": "@DevGuy92",
+        "text": "Amazing CSS work! Converting static designs to functional components is no joke.",
+        "timePosted": "2 days ago",
+        "likes": 15,
+        "dislikes": 0,
+        "avatar": "assets/apps/projects/icons/guest.webp"
+      },
+      {
+        "username": "@CodeMaster",
+        "text": "Pure CSS implementation without SVGs? That's impressive technical skill.",
+        "timePosted": "1 day ago",
+        "likes": 8,
+        "dislikes": 0,
+        "avatar": "assets/apps/projects/icons/guest.webp"
+      }
+    ]
+  }
+}

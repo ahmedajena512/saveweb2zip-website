@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>YouTube</title>
+    <link rel="stylesheet" href="https://unpkg.com/xp.css@0.2.6/dist/XP.css" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left"><img src="../../../assets/apps/projects/icons/l_projects.webp" alt="Projects Logo"
+                class="logo-img"></div>
+        <div class="header-center mobile-hidden-initial"><input type="text" class="search-input" placeholder="Search">
+            <div class="search-btn"><img src="../../../assets/apps/projects/icons/l_search.webp" alt="Search"
+                    class="search-icon"></div>
+            <div class="search-dropdown" id="search-dropdown"></div>
+        </div>
+        <div class="header-right">
+            <div class="icon-btn social-btn" data-social="instagram"><img
+                    src="../../../assets/apps/projects/icons/l_insta.webp" alt="Instagram" class="social-icon"></div>
+            <div class="icon-btn social-btn" data-social="github"><img
+                    src="../../../assets/apps/projects/icons/l_github.webp" alt="GitHub" class="social-icon"></div>
+        </div>
+    </header>
+    <div class="sidebar-line"></div>
+    <nav class="sidebar mobile-hidden-initial">
+        <div class="nav-item active"><span class="nav-icon"><img src="../../../assets/apps/projects/icons/l_home.webp"
+                    alt="All" class="sidebar-icon"></span><span class="nav-text">All</span></div>
+        <div class="nav-item"><span class="nav-icon"><img src="../../../assets/apps/projects/icons/l_image.webp"
+                    alt="Image" class="sidebar-icon"></span><span class="nav-text">Image</span></div>
+        <div class="nav-item"><span class="nav-icon"><img src="../../../assets/apps/projects/icons/l_web.webp" alt="Web"
+                    class="sidebar-icon"></span><span class="nav-text">Web</span></div>
+        <div class="nav-item"><span class="nav-icon"><img src="../../../assets/apps/projects/icons/l_video.webp"
+                    alt="Video" class="sidebar-icon"></span><span class="nav-text">Video</span></div>
+        <div class="nav-item"><span class="nav-icon"><img src="../../../assets/apps/projects/icons/l_client.webp"
+                    alt="Client" class="sidebar-icon"></span><span class="nav-text">Client</span></div>
+        <div class="nav-item"><span class="nav-icon"><img src="../../../assets/apps/projects/icons/l_personal.webp"
+                    alt="Personal" class="sidebar-icon"></span><span class="nav-text">Personal</span></div>
+    </nav>
+    <main class="content" id="app-content">
+        <div class="video-grid"></div>
+    </main>
+    <div class="page-transition-overlay"></div>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

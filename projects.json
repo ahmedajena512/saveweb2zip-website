@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Project One",
+    "subtitle": "A catchphrase for the project",
+    "brief": "A 1-2 sentence high-level summary.",
+    "description": "A more detailed description of what you built, how you built it, and why.",
+    "role": "Lead Developer",
+    "category": "Web App",
+    "tags": [
+      "React",
+      "Firebase"
+    ]
+  }
+]

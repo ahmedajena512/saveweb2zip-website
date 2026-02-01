@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Winamp</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #292929;
+            /* Fallback */
+        }
+
+        #app {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="lib/webamp.bundle.min.js"></script>
+    <script>
+        const app = document.getElementById("app");
+        if (window.Webamp) {
+            const webamp = new Webamp({
+                initialTracks: [
+                    {
+                        metaData: { artist: "Unknown Artist", title: "Song 1" },
+                        url: "../../../assets/apps/musicPlayer/audio/song1.mp3"
+                    },
+                    {
+                        metaData: { artist: "Unknown Artist", title: "Song 2" },
+                        url: "../../../assets/apps/musicPlayer/audio/song2.mp3"
+                    },
+                    {
+                        metaData: { artist: "Unknown Artist", title: "Song 3" },
+                        url: "../../../assets/apps/musicPlayer/audio/song3.mp3"
+                    },
+                    {
+                        metaData: { artist: "Unknown Artist", title: "Song 4" },
+                        url: "../../../assets/apps/musicPlayer/audio/song4.mp3"
+                    },
+                    {
+                        metaData: { artist: "Unknown Artist", title: "Song 5" },
+                        url: "../../../assets/apps/musicPlayer/audio/song5.mp3"
+                    }
+                ],
+                zIndex: 1
+            });
+
+            // Webamp usually renders absolute. We might need to center it or let it handle its own position.
+            // In 98.js it's rendered to a container.
+            webamp.renderWhenReady(app).then(() => {
+                console.log('Webamp rendered');
+            }).catch(err => {
+                console.error("Error rendering Webamp:", err);
+            });
+        }
+    </script>
+</body>
+
+</html>

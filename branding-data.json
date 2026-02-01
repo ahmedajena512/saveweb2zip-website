@@ -1,0 +1,39 @@
+{
+  "contact": {
+    "name": "Ahmed AJ",
+    "email": "contact@mitchivin.com"
+  },
+  "app": {
+    "name": "Ahmed AJ XP",
+    "version": "3.5.0",
+    "author": "Ahmed AJ",
+    "copyright": "2025 Ahmed AJ. All rights reserved."
+  },
+  "domains": {
+    "allowed": [
+      "localhost",
+      "127.0.0.1",
+      "mitchivin.com",
+      "www.mitchivin.com"
+    ],
+    "redirect": "https://mitchivin.com/"
+  },
+  "files": {
+    "resume": "resumeMitchIvin.pdf",
+    "userIcon": "assets/gui/user-icon.gif"
+  },
+  "socials": {
+    "instagram": "https://instagram.com/yourprofile",
+    "github": "https://github.com/yourprofile"
+  },
+  "build": {
+    "profile": "prod"
+  },
+  "about": {
+    "paragraphs": [
+      "First paragraph about you...",
+      "Second paragraph with more details...",
+      "Third paragraph about your goals..."
+    ]
+  }
+}

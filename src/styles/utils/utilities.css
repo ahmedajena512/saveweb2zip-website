@@ -1,0 +1,137 @@
+.mobile-device *,
+.no-select,
+[disabled] {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important
+}
+
+.hidden-container,
+.hidden-container * {
+    left: -10000px !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: fixed !important;
+    top: -10000px !important;
+    visibility: hidden !important;
+    z-index: -9999 !important
+}
+
+body,
+html {
+    background: #000;
+    height: 100%;
+    overflow: hidden;
+    touch-action: none
+}
+
+#boot-screen,
+#landscape-block,
+#login-screen,
+.boot-fadeout-overlay-style,
+.desktop,
+.pre-boot-overlay-style {
+    height: 100%
+}
+
+.mobile-device * {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-focus-ring-color: transparent !important;
+    outline: none !important
+}
+
+[style*=background-image],
+canvas,
+img,
+video {
+    -webkit-user-select: none !important;
+    -webkit-touch-callout: none !important;
+    pointer-events: auto;
+    -moz-user-select: none !important;
+    user-select: none !important
+}
+
+canvas,
+img,
+video {
+    -webkit-user-drag: none !important;
+    touch-action: none !important
+}
+
+#preload-wallpaper {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 0
+}
+
+.mobile-device .desktop-only {
+    display: none !important
+}
+
+.mobile-device .mobile-only {
+    display: initial !important
+}
+
+.sr-only {
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    clip: rect(0, 0, 0, 0) !important;
+    border: 0 !important;
+    white-space: nowrap !important
+}
+
+.app-scroll {
+    overflow-x: hidden;
+    overflow-y: auto
+}
+
+.app-tight {
+    margin: 0 !important;
+    padding: 0 !important
+}
+
+.mobile-device body {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none
+}
+
+.mobile-device body::-webkit-scrollbar {
+    display: none
+}
+
+.mobile-device ::-webkit-scrollbar {
+    display: none
+}
+
+.mobile-device * {
+    scrollbar-width: none;
+    -ms-overflow-style: none
+}
+
+.firefox-browser * {
+    scrollbar-width: none !important
+}
+
+.firefox-browser ::-webkit-scrollbar {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important
+}
+
+.firefox-browser ::-webkit-scrollbar-track {
+    display: none !important
+}
+
+.firefox-browser ::-webkit-scrollbar-thumb {
+    display: none !important
+}
+
+.firefox-browser ::-webkit-scrollbar-corner {
+    display: none !important
+}
