@@ -32,33 +32,30 @@
             const webamp = new Webamp({
                 initialTracks: [
                     {
-                        metaData: { artist: "Unknown Artist", title: "Song 1" },
+                        metaData: { artist: "Winamp", title: "Llama Whippin' (Intro)" },
+                        url: "mp3/llama-2.91.mp3"
+                    },
+                    {
+                        metaData: { artist: "Unknown Artist", title: "Track 1" },
                         url: "../../../assets/apps/musicPlayer/audio/song1.mp3"
                     },
                     {
-                        metaData: { artist: "Unknown Artist", title: "Song 2" },
+                        metaData: { artist: "Unknown Artist", title: "Track 2" },
                         url: "../../../assets/apps/musicPlayer/audio/song2.mp3"
                     },
                     {
-                        metaData: { artist: "Unknown Artist", title: "Song 3" },
+                        metaData: { artist: "Unknown Artist", title: "Track 3" },
                         url: "../../../assets/apps/musicPlayer/audio/song3.mp3"
-                    },
-                    {
-                        metaData: { artist: "Unknown Artist", title: "Song 4" },
-                        url: "../../../assets/apps/musicPlayer/audio/song4.mp3"
-                    },
-                    {
-                        metaData: { artist: "Unknown Artist", title: "Song 5" },
-                        url: "../../../assets/apps/musicPlayer/audio/song5.mp3"
                     }
                 ],
+                initialSkin: {
+                    url: "skins/Excel_Skin.wsz"
+                },
                 zIndex: 1
             });
 
-            // Webamp usually renders absolute. We might need to center it or let it handle its own position.
-            // In 98.js it's rendered to a container.
             webamp.renderWhenReady(app).then(() => {
-                console.log('Webamp rendered');
+                console.log('Webamp rendered with custom skins and tracks');
             }).catch(err => {
                 console.error("Error rendering Webamp:", err);
             });
