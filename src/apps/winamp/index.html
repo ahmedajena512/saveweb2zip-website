@@ -29,44 +29,50 @@
     <script>
         const app = document.getElementById("app");
         if (window.Webamp) {
+            console.log("Webamp detected. Initializing...");
+            
+            // Try different path variations to find what works
+            // Relative to this file: skins/Excel_Skin.wsz
+            // Absolute from root: /src/apps/winamp/skins/Excel_Skin.wsz (depending on deployment)
+            
+            const skins = [
+                { url: "skins/Excel_Skin.wsz", name: "Excel Skin" },
+                { url: "skins/MIKU%20v3%20by%20jenny1437.wsz", name: "Miku v3" },
+                { url: "skins/Rei_Ayanami_Amp_2.wsz", name: "Rei Ayanami" },
+                { url: "skins/undertale-by-luigihann.wsz", name: "Undertale" },
+                { url: "skins/winampskin_D-Shock.zip", name: "D-Shock" },
+                { url: "skins/wired_lain.wsz", name: "Wired Lain" }
+            ];
+
             const webamp = new Webamp({
                 initialTracks: [
                     {
                         metaData: { artist: "Winamp", title: "Llama Whippin' (Intro)" },
                         url: "mp3/llama-2.91.mp3"
-                    },
-                    {
-                        metaData: { artist: "Unknown Artist", title: "Track 1" },
-                        url: "../../../assets/apps/musicPlayer/audio/song1.mp3"
-                    },
-                    {
-                        metaData: { artist: "Unknown Artist", title: "Track 2" },
-                        url: "../../../assets/apps/musicPlayer/audio/song2.mp3"
-                    },
-                    {
-                        metaData: { artist: "Unknown Artist", title: "Track 3" },
-                        url: "../../../assets/apps/musicPlayer/audio/song3.mp3"
                     }
                 ],
                 initialSkin: {
                     url: "skins/Excel_Skin.wsz"
                 },
-                availableSkins: [
-                    { url: "skins/Excel_Skin.wsz", name: "Excel Skin" },
-                    { url: "skins/MIKU%20v3%20by%20jenny1437.wsz", name: "Miku v3" },
-                    { url: "skins/Rei_Ayanami_Amp_2.wsz", name: "Rei Ayanami" },
-                    { url: "skins/undertale-by-luigihann.wsz", name: "Undertale" },
-                    { url: "skins/winampskin_D-Shock.zip", name: "D-Shock" },
-                    { url: "skins/wired_lain.wsz", name: "Wired Lain" }
-                ],
+                availableSkins: skins,
+                // Some versions use 'skins' or 'skinUrls'
+                skinUrls: skins.map(s => s.url), 
                 zIndex: 1
             });
 
             webamp.renderWhenReady(app).then(() => {
-                console.log('Webamp rendered with skins menu');
+                console.log('Webamp rendered');
+                console.log('Available skins passed to constructor:', skins);
             }).catch(err => {
                 console.error("Error rendering Webamp:", err);
             });
+
+            // Debugging method to check if we can set skin manually
+            window.loadWinampSkin = (url) => {
+                webamp.setSkinFromUrl(url);
+            };
+        } else {
+            console.error("Webamp library not loaded!");
         }
     </script>
 </body>
