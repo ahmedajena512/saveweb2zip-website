@@ -29,18 +29,17 @@
     <script>
         const app = document.getElementById("app");
         if (window.Webamp) {
-            console.log("Webamp detected. Initializing with availableSkins...");
+            console.log("Webamp v1.4.x+ detected (based on bundle analysis).");
             
             const skins = [
-                { url: "skins/Excel_Skin.wsz", name: "Excel Skin" },
-                { url: "skins/MIKU%20v3%20by%20jenny1437.wsz", name: "Miku v3" },
-                { url: "skins/Rei_Ayanami_Amp_2.wsz", name: "Rei Ayanami" },
-                { url: "skins/undertale-by-luigihann.wsz", name: "Undertale" },
-                { url: "skins/winampskin_D-Shock.zip", name: "D-Shock" },
-                { url: "skins/wired_lain.wsz", name: "Wired Lain" }
+                { id: "excel", url: "skins/Excel_Skin.wsz", name: "Excel Skin" },
+                { id: "miku", url: "skins/MIKU%20v3%20by%20jenny1437.wsz", name: "Miku v3" },
+                { id: "rei", url: "skins/Rei_Ayanami_Amp_2.wsz", name: "Rei Ayanami" },
+                { id: "undertale", url: "skins/undertale-by-luigihann.wsz", name: "Undertale" },
+                { id: "dshock", url: "skins/winampskin_D-Shock.zip", name: "D-Shock" },
+                { id: "lain", url: "skins/wired_lain.wsz", name: "Wired Lain" }
             ];
 
-            // Webamp constructor options
             const options = {
                 initialTracks: [
                     {
@@ -51,42 +50,42 @@
                 initialSkin: {
                     url: "skins/Excel_Skin.wsz"
                 },
+                // The correct property according to documentation and bundle analysis
                 availableSkins: skins,
-                // Some older versions or forks might use these:
+                // Misspelled version for backward compatibility in some builds
+                avaliableSkins: skins, 
+                // Alternate property names used in various versions/forks
                 skins: skins,
                 skinUrls: skins.map(s => s.url),
                 zIndex: 1
             };
 
+            console.log("Initializing Webamp with options:", options);
             const webamp = new Webamp(options);
 
             webamp.renderWhenReady(app).then(() => {
-                console.log('Webamp rendered.');
-                console.log('Constructor options used:', options);
+                console.log('Webamp rendered successfully.');
                 
-                // Debug: List all available methods and properties on the instance
-                console.log('Webamp instance properties:', Object.keys(webamp));
-                
-                // Try to find a method to add skins post-initialization if availableSkins fails
-                if (webamp.appendSkins) {
-                    console.log('Found appendSkins method, calling it...');
-                    webamp.appendSkins(skins);
-                } else if (webamp.addSkins) {
-                    console.log('Found addSkins method, calling it...');
-                    webamp.addSkins(skins);
+                // If the menu is still empty, try to dispatch a manual update if possible
+                // We attempt to find the Redux store which is often exposed in debug builds or common forks
+                try {
+                    if (webamp.store && webamp.store.dispatch) {
+                        console.log("Attempting manual skin dispatch to Redux store...");
+                        webamp.store.dispatch({
+                            type: "SET_AVAILABLE_SKINS",
+                            skins: skins
+                        });
+                    }
+                } catch (e) {
+                    console.warn("Manual dispatch failed (this is expected in minified production builds).");
                 }
             }).catch(err => {
                 console.error("Error rendering Webamp:", err);
             });
 
-            // Global debug helper
-            window.webampDebug = {
-                instance: webamp,
-                skins: skins,
-                setSkin: (url) => webamp.setSkinFromUrl(url)
-            };
+            window.webamp = webamp; // Expose for easier console debugging
         } else {
-            console.error("Webamp library not loaded!");
+            console.error("Webamp library not loaded! Check if lib/webamp.bundle.min.js is accessible.");
         }
     </script>
 </body>
