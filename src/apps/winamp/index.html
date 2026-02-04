@@ -43,6 +43,10 @@
             const options = {
                 initialTracks: [
                     {
+                        metaData: { artist: "Alex C.", title: "Angel of Darkness" },
+                        url: "https://raw.githubusercontent.com/ahmedajena512/saveweb2zip-website/main/src/apps/winamp/mp3/AngelOfDarkness.flac"
+                    },
+                    {
                         metaData: { artist: "Winamp", title: "Llama Whippin' (Intro)" },
                         url: "mp3/llama-2.91.mp3"
                     }
@@ -50,11 +54,8 @@
                 initialSkin: {
                     url: "skins/Excel_Skin.wsz"
                 },
-                // The correct property according to documentation and bundle analysis
                 availableSkins: skins,
-                // Misspelled version for backward compatibility in some builds
                 avaliableSkins: skins, 
-                // Alternate property names used in various versions/forks
                 skins: skins,
                 skinUrls: skins.map(s => s.url),
                 zIndex: 1
@@ -66,26 +67,23 @@
             webamp.renderWhenReady(app).then(() => {
                 console.log('Webamp rendered successfully.');
                 
-                // If the menu is still empty, try to dispatch a manual update if possible
-                // We attempt to find the Redux store which is often exposed in debug builds or common forks
                 try {
                     if (webamp.store && webamp.store.dispatch) {
-                        console.log("Attempting manual skin dispatch to Redux store...");
                         webamp.store.dispatch({
                             type: "SET_AVAILABLE_SKINS",
                             skins: skins
                         });
                     }
                 } catch (e) {
-                    console.warn("Manual dispatch failed (this is expected in minified production builds).");
+                    // Silently fail for production builds
                 }
             }).catch(err => {
                 console.error("Error rendering Webamp:", err);
             });
 
-            window.webamp = webamp; // Expose for easier console debugging
+            window.webamp = webamp;
         } else {
-            console.error("Webamp library not loaded! Check if lib/webamp.bundle.min.js is accessible.");
+            console.error("Webamp library not loaded!");
         }
     </script>
 </body>
