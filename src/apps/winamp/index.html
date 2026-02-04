@@ -51,11 +51,19 @@
                 initialSkin: {
                     url: "skins/Excel_Skin.wsz"
                 },
+                availableSkins: [
+                    { url: "skins/Excel_Skin.wsz", name: "Excel Skin" },
+                    { url: "skins/MIKU%20v3%20by%20jenny1437.wsz", name: "Miku v3" },
+                    { url: "skins/Rei_Ayanami_Amp_2.wsz", name: "Rei Ayanami" },
+                    { url: "skins/undertale-by-luigihann.wsz", name: "Undertale" },
+                    { url: "skins/winampskin_D-Shock.zip", name: "D-Shock" },
+                    { url: "skins/wired_lain.wsz", name: "Wired Lain" }
+                ],
                 zIndex: 1
             });
 
             webamp.renderWhenReady(app).then(() => {
-                console.log('Webamp rendered with custom skins and tracks');
+                console.log('Webamp rendered with skins menu');
             }).catch(err => {
                 console.error("Error rendering Webamp:", err);
             });
