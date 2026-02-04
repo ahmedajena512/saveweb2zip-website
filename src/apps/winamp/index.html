@@ -29,7 +29,7 @@
     <script>
         const app = document.getElementById("app");
         if (window.Webamp) {
-            console.log("Webamp v1.4.x+ detected (based on bundle analysis).");
+            console.log("Webamp initialization starting...");
             
             const skins = [
                 { id: "excel", url: "skins/Excel_Skin.wsz", name: "Excel Skin" },
@@ -40,25 +40,34 @@
                 { id: "lain", url: "skins/wired_lain.wsz", name: "Wired Lain" }
             ];
 
-            const options = {
-                initialTracks: [
-                    {
-                        metaData: { artist: "Alex C.", title: "Angel of Darkness" },
-                        url: "https://raw.githubusercontent.com/ahmedajena512/webamp-music/main/AngelOfDarkness.flac"
+            const tracks = [
+                {
+                    metaData: { 
+                        artist: "Alex C.", 
+                        title: "Angel of Darkness" 
                     },
-                    {
-                        metaData: { artist: "Winamp", title: "Llama Whippin' (Intro)" },
-                        url: "mp3/llama-2.91.mp3"
-                    }
-                ],
+                    url: "https://raw.githubusercontent.com/ahmedajena512/webamp-music/main/AngelOfDarkness.flac",
+                    duration: 213,
+                    defaultName: "Angel of Darkness"
+                },
+                {
+                    metaData: { 
+                        artist: "Winamp", 
+                        title: "Llama Whippin' (Intro)" 
+                    },
+                    url: "mp3/llama-2.91.mp3",
+                    duration: 5,
+                    defaultName: "Llama Whippin' Intro"
+                }
+            ];
+
+            const options = {
+                initialTracks: tracks,
                 initialSkin: {
                     url: "skins/Excel_Skin.wsz"
                 },
                 availableSkins: skins,
-                avaliableSkins: skins, 
-                skins: skins,
-                skinUrls: skins.map(s => s.url),
-                zIndex: 1
+                zIndex: 1000 // Higher z-index as recommended
             };
 
             console.log("Initializing Webamp with options:", options);
@@ -67,6 +76,7 @@
             webamp.renderWhenReady(app).then(() => {
                 console.log('Webamp rendered successfully.');
                 
+                // Force update available skins after render if constructor didn't pick it up
                 try {
                     if (webamp.store && webamp.store.dispatch) {
                         webamp.store.dispatch({
@@ -75,7 +85,7 @@
                         });
                     }
                 } catch (e) {
-                    // Silently fail for production builds
+                    console.warn("Failed to dispatch SET_AVAILABLE_SKINS", e);
                 }
             }).catch(err => {
                 console.error("Error rendering Webamp:", err);
