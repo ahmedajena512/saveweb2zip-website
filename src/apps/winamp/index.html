@@ -29,11 +29,7 @@
     <script>
         const app = document.getElementById("app");
         if (window.Webamp) {
-            console.log("Webamp detected. Initializing...");
-            
-            // Try different path variations to find what works
-            // Relative to this file: skins/Excel_Skin.wsz
-            // Absolute from root: /src/apps/winamp/skins/Excel_Skin.wsz (depending on deployment)
+            console.log("Webamp detected. Initializing with availableSkins...");
             
             const skins = [
                 { url: "skins/Excel_Skin.wsz", name: "Excel Skin" },
@@ -44,7 +40,8 @@
                 { url: "skins/wired_lain.wsz", name: "Wired Lain" }
             ];
 
-            const webamp = new Webamp({
+            // Webamp constructor options
+            const options = {
                 initialTracks: [
                     {
                         metaData: { artist: "Winamp", title: "Llama Whippin' (Intro)" },
@@ -55,21 +52,38 @@
                     url: "skins/Excel_Skin.wsz"
                 },
                 availableSkins: skins,
-                // Some versions use 'skins' or 'skinUrls'
-                skinUrls: skins.map(s => s.url), 
+                // Some older versions or forks might use these:
+                skins: skins,
+                skinUrls: skins.map(s => s.url),
                 zIndex: 1
-            });
+            };
+
+            const webamp = new Webamp(options);
 
             webamp.renderWhenReady(app).then(() => {
-                console.log('Webamp rendered');
-                console.log('Available skins passed to constructor:', skins);
+                console.log('Webamp rendered.');
+                console.log('Constructor options used:', options);
+                
+                // Debug: List all available methods and properties on the instance
+                console.log('Webamp instance properties:', Object.keys(webamp));
+                
+                // Try to find a method to add skins post-initialization if availableSkins fails
+                if (webamp.appendSkins) {
+                    console.log('Found appendSkins method, calling it...');
+                    webamp.appendSkins(skins);
+                } else if (webamp.addSkins) {
+                    console.log('Found addSkins method, calling it...');
+                    webamp.addSkins(skins);
+                }
             }).catch(err => {
                 console.error("Error rendering Webamp:", err);
             });
 
-            // Debugging method to check if we can set skin manually
-            window.loadWinampSkin = (url) => {
-                webamp.setSkinFromUrl(url);
+            // Global debug helper
+            window.webampDebug = {
+                instance: webamp,
+                skins: skins,
+                setSkin: (url) => webamp.setSkinFromUrl(url)
             };
         } else {
             console.error("Webamp library not loaded!");
