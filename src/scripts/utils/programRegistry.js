@@ -86,57 +86,7 @@ const defaults = {
                 'height': 0x190
             },
             'statusBarText': document['documentElement']['classList']['contains']('mobile-device') ? 'Powered\x20by\x20JS\x20Paint\x20(MIT\x20License)' : 'Powered\x20by\x20JS\x20Paint\x20(MIT\x20License)\x20-\x20<a\x20href=\x22https://jspaint.app\x22\x20target=\x22_blank\x22\x20rel=\x22noopener\x20noreferrer\x22\x20style=\x22color:\x20#0000ff;\x20text-decoration:\x20underline;\x22>jspaint.app</a>',
-            'menuBarConfig': {
-                'items': [{
-                    'key': 'file',
-                    'text': 'File',
-                    'enabled': !0x0,
-                    'dropdown': [{
-                        'text': 'New...',
-                        'action': 'paintNew',
-                        'enabled': !0x1
-                    }, {
-                        'text': 'Save',
-                        'action': 'fileSave',
-                        'enabled': !0x1
-                    }, {
-                        'text': 'Print',
-                        'action': 'filePrint',
-                        'enabled': !0x1
-                    }, {
-                        'type': 'separator'
-                    }, {
-                        'text': 'Close',
-                        'action': 'exitProgram',
-                        'enabled': !0x0
-                    }]
-                }, {
-                    'key': 'edit',
-                    'text': 'Edit',
-                    'enabled': !0x1
-                }, {
-                    'key': 'view',
-                    'text': 'View',
-                    'enabled': !0x0,
-                    'dropdown': [{
-                        'text': 'Maximize',
-                        'action': 'maximizeWindow',
-                        'enabled': !0x0
-                    }, {
-                        'text': 'Minimize',
-                        'action': 'minimizeWindow',
-                        'enabled': !0x0
-                    }]
-                }, {
-                    'key': 'tools',
-                    'text': 'Tools',
-                    'enabled': !0x1
-                }, {
-                    'key': 'help',
-                    'text': 'Help',
-                    'enabled': !0x1
-                }]
-            }
+
         }),
         'minesweeper': createProgram('minesweeper', 'Minesweeper', 'start-menu/minesweeper.png', {
             'appPath': 'src/apps/minesweeper/index.html',
@@ -546,7 +496,7 @@ const defaults = {
                 'height': 450
             },
             'statusBarText': 'Play Chess against the computer',
-            'appPath': 'src/apps/chess/chess.html',
+            'appPath': 'src/apps/chess/index.html',
             'mobileConfig': {
                 'position': {
                     'type': 'special',
@@ -555,6 +505,34 @@ const defaults = {
                 'draggable': false,
                 'resizable': false
             }
+        }),
+        'minecraft': createProgram('minecraft', 'Minecraft', 'desktop/minecraft.webp', {
+            'appPath': 'src/apps/minecraft/index.html',
+            'dimensions': {
+                'width': 854,
+                'height': 480
+            },
+            'minDimensions': {
+                'width': 640,
+                'height': 360
+            },
+            'allow': 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; pointer-lock; keyboard-lock',
+            'sandbox': 'allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-modals allow-popups allow-orientation-lock',
+            'resizable': !0x0,
+            'statusBarText': 'Eaglercraft Minecraft 1.8'
+        }),
+        '8ball': createProgram('8ball', '8 Ball Pool', 'desktop/8ball.webp', {
+            'appPath': 'src/apps/8ball/index.html',
+            'dimensions': {
+                'width': 800,
+                'height': 600
+            },
+            'minDimensions': {
+                'width': 640,
+                'height': 480
+            },
+            'resizable': !0x0,
+            'statusBarText': '8 Ball Pool - HTML5 Game'
         })
     };
 export default programData;

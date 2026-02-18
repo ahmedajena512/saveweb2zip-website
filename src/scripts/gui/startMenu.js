@@ -144,8 +144,22 @@ _winampItem['icon'] = './assets/gui/start-menu/winamp.png';
 _winampItem['label'] = 'Winamp';
 _winampItem['disabled'] = false;
 
-const ALL_PROGRAMS_ITEMS_BASE = [_0xc20b5f, _0x28f659, _0x5a279d, _0x32e33f, _0x487526, _0x127408, _0xdbf0c8, _0xdba3b3, _0x575676, _chessItem, _paintItem, _minesweeperItem, _solitaireItem, _winampItem],
-    GAMES_MENU_ITEMS = [_chessItem, _paintItem, _minesweeperItem, _solitaireItem];
+const _minecraftItem = {};
+_minecraftItem['type'] = 'program';
+_minecraftItem['programName'] = 'minecraft';
+_minecraftItem['icon'] = './assets/gui/desktop/minecraft.webp';
+_minecraftItem['label'] = 'Minecraft';
+_minecraftItem['disabled'] = false;
+
+const _8ballItem = {};
+_8ballItem['type'] = 'program';
+_8ballItem['programName'] = '8ball';
+_8ballItem['icon'] = './assets/gui/desktop/8ball.webp';
+_8ballItem['label'] = '8 Ball Pool';
+_8ballItem['disabled'] = false;
+
+const ALL_PROGRAMS_ITEMS_BASE = [_0xc20b5f, _0x28f659, _0x5a279d, _0x32e33f, _0x487526, _0x127408, _0xdbf0c8, _0xdba3b3, _0x575676, _chessItem, _paintItem, _minesweeperItem, _solitaireItem, _winampItem, _minecraftItem, _8ballItem],
+    GAMES_MENU_ITEMS = [_chessItem, _paintItem, _minesweeperItem, _solitaireItem, _minecraftItem, _8ballItem];
 let SOCIALS = [],
     systemAssets = null;
 const _0xe78f0 = {};
@@ -243,10 +257,16 @@ export default class StartMenu {
     }
     set ['activeWindowOverlay'](_0x468672) {
         this['stateManager']['setState']('startMenu.activeWindowOverlay', _0x468672);
+    }
+    get ['gamesMenu']() {
+        return this['stateManager']['getState']('startMenu.gamesMenu');
+    }
+    set ['gamesMenu'](value) {
+        this['stateManager']['setState']('startMenu.gamesMenu', value);
     } [_0x385705(0x1c4)]() {
         const _0x6fdf81 = _0x385705;
         try {
-            this[_0x6fdf81(0x1c7)](), this[_0x6fdf81(0xd5)](), this[_0x6fdf81(0x1d8)] && (window[_0x6fdf81(0x11f)](_0x6fdf81(0xe3), this[_0x6fdf81(0x1d8)], !0x0), this[_0x6fdf81(0x1d8)] = null), this['_onDocumentKeyDown'] && (document[_0x6fdf81(0x11f)](_0x6fdf81(0x18f), this[_0x6fdf81(0x1b4)]), this[_0x6fdf81(0x1b4)] = null), this[_0x6fdf81(0x100)] && this[_0x6fdf81(0x17a)] && (this[_0x6fdf81(0x100)][_0x6fdf81(0x11f)]('click', this['_onStartMenuClick']), this['_onStartMenuClick'] = null), this[_0x6fdf81(0x100)] && this[_0x6fdf81(0x100)][_0x6fdf81(0x15d)] && this['startMenu']['parentNode'][_0x6fdf81(0xf0)](this[_0x6fdf81(0x100)]), this['allProgramsMenu'] && this[_0x6fdf81(0x14c)][_0x6fdf81(0x15d)] && this['allProgramsMenu'][_0x6fdf81(0x15d)][_0x6fdf81(0xf0)](this[_0x6fdf81(0x14c)]), this[_0x6fdf81(0x17b)] && this[_0x6fdf81(0x17b)][_0x6fdf81(0x15d)] && this['recentlyUsedMenu'][_0x6fdf81(0x15d)]['removeChild'](this[_0x6fdf81(0x17b)]), this[_0x6fdf81(0x100)] = null, this['allProgramsMenu'] = null, this[_0x6fdf81(0x17b)] = null, this[_0x6fdf81(0x190)] = null, this[_0x6fdf81(0x1ac)] = !0x1;
+            this[_0x6fdf81(0x1c7)](), this[_0x6fdf81(0xd5)](), this[_0x6fdf81(0x1d8)] && (window[_0x6fdf81(0x11f)](_0x6fdf81(0xe3), this[_0x6fdf81(0x1d8)], !0x0), this[_0x6fdf81(0x1d8)] = null), this['_onDocumentKeyDown'] && (document[_0x6fdf81(0x11f)](_0x6fdf81(0x18f), this[_0x6fdf81(0x1b4)]), this[_0x6fdf81(0x1b4)] = null), this[_0x6fdf81(0x100)] && this[_0x6fdf81(0x17a)] && (this[_0x6fdf81(0x100)][_0x6fdf81(0x11f)]('click', this['_onStartMenuClick']), this['_onStartMenuClick'] = null), this[_0x6fdf81(0x100)] && this[_0x6fdf81(0x100)][_0x6fdf81(0x15d)] && this['startMenu']['parentNode'][_0x6fdf81(0xf0)](this[_0x6fdf81(0x100)]), this['allProgramsMenu'] && this[_0x6fdf81(0x14c)][_0x6fdf81(0x15d)] && this['allProgramsMenu'][_0x6fdf81(0x15d)][_0x6fdf81(0xf0)](this[_0x6fdf81(0x14c)]), this['gamesMenu'] && this['gamesMenu'][_0x6fdf81(0x15d)] && this['gamesMenu'][_0x6fdf81(0x15d)][_0x6fdf81(0xf0)](this['gamesMenu']), this[_0x6fdf81(0x17b)] && this[_0x6fdf81(0x17b)][_0x6fdf81(0x15d)] && this['recentlyUsedMenu'][_0x6fdf81(0x15d)]['removeChild'](this[_0x6fdf81(0x17b)]), this[_0x6fdf81(0x100)] = null, this['allProgramsMenu'] = null, this['gamesMenu'] = null, this[_0x6fdf81(0x17b)] = null, this[_0x6fdf81(0x190)] = null, this[_0x6fdf81(0x1ac)] = !0x1;
         } catch (_0x5f2139) { }
     }
     async [_0x385705(0x15e)]() {
@@ -279,7 +299,7 @@ export default class StartMenu {
         _0x162401[_0x247ba0(0xd1)](_0x247ba0(0x1d9))[_0x247ba0(0x188)](_0x57bbe8 => {
             const _0x5ae9a5 = _0x247ba0;
             _0x57bbe8[_0x5ae9a5(0x168)] = _0x591968;
-        }), this[_0x247ba0(0x15a)](), this[_0x247ba0(0x137)](), this[_0x247ba0(0xf1)](), this[_0x247ba0(0x133)]();
+        }), this[_0x247ba0(0x15a)](), this['createGamesMenu'](), this[_0x247ba0(0x137)](), this[_0x247ba0(0xf1)](), this['initGamesButton'](), this[_0x247ba0(0x133)]();
     } [_0x385705(0x118)](_0xb3ca6f, _0x195ba8, _0x5c3562) {
         const _0x326c2a = _0x385705;
         if (!this[_0x5c3562]) {
@@ -309,6 +329,16 @@ export default class StartMenu {
             'menuClass': 'all-programs-menu',
             'propertyName': _0x9b78ea(0x14c),
             'itemSelector': _0x9b78ea(0x13f),
+            'attachClickHandler': !0x0
+        });
+    } ['createGamesMenu']() {
+        this['_createMenuWithEffects']({
+            'items': GAMES_MENU_ITEMS,
+            'itemClass': 'games-menu-item',
+            'ulClass': 'games-menu-items',
+            'menuClass': 'games-menu',
+            'propertyName': 'gamesMenu',
+            'itemSelector': '.games-menu-item',
             'attachClickHandler': !0x0
         });
     } [_0x385705(0x137)]() {
@@ -357,7 +387,14 @@ export default class StartMenu {
         _0x56571f['id'] = _0x558430(0x214), _0x56571f[_0x558430(0x150)] = _0x558430(0x144), _0x56571f[_0x558430(0xfa)] = _0x558430(0x1a9), _0x56571f[_0x558430(0x1a1)] = 'image-viewer', _0x56571f[_0x558430(0x11a)] = _0x558430(0xfb), _0x56571f[_0x558430(0x16d)] = !0x1;
         const _0x5720b5 = {};
         _0x5720b5['id'] = 'resume', _0x5720b5[_0x558430(0x150)] = _0x558430(0xe9), _0x5720b5[_0x558430(0xfa)] = _0x558430(0x1a3), _0x5720b5[_0x558430(0x1a1)] = _0x558430(0x19c), _0x5720b5['action'] = _0x558430(0xfb);
-        const _0x21e161 = _0x558430(0x11b) + _0x16002a(_0x3de5ab) + _0x558430(0x11b) + _0x16002a(_0x96fd0b) + '\x0a\x20\x20\x20\x20\x20\x20' + _0x16002a(_0x1bf373) + _0x558430(0x16e) + _0x16002a(CMD_CONFIG) + _0x558430(0x11b) + _0x16002a(_0x56571f) + _0x558430(0x11b) + _0x16002a(_0x5720b5) + _0x558430(0x157),
+        const _gamesMenuItem = {
+            id: 'games',
+            icon: './assets/gui/start-menu/games-explorer.webp',
+            title: 'Games',
+            action: 'none',
+            arrow: true
+        };
+        const _0x21e161 = _0x558430(0x11b) + _0x16002a(_0x3de5ab) + _0x558430(0x11b) + _0x16002a(_0x96fd0b) + _0x16002a(_gamesMenuItem) + _0x16002a(CMD_CONFIG) + _0x558430(0x11b) + _0x16002a(_0x56571f) + _0x558430(0x11b) + _0x16002a(_0x5720b5) + _0x558430(0x157),
             _0x559da9 = {};
         _0x559da9['id'] = _0x558430(0xf9), _0x559da9[_0x558430(0x150)] = _0x558430(0xf4), _0x559da9[_0x558430(0xfa)] = _0x558430(0x111), _0x559da9['description'] = _0x558430(0x204), _0x559da9['programName'] = _0x558430(0xf9), _0x559da9['action'] = 'open-program';
         const _0x149f07 = {};
@@ -390,8 +427,9 @@ export default class StartMenu {
             const _0x2b023f = this[_0x314e59(0x100)][_0x314e59(0x16c)](_0x28b653),
                 _0x3e9b80 = this[_0x314e59(0x1cc)][_0x314e59(0x16c)](_0x28b653),
                 _0x326f18 = this[_0x314e59(0x14c)]?.[_0x314e59(0x16c)](_0x28b653),
-                _0x10ae0b = this[_0x314e59(0x17b)]?.['contains'](_0x28b653);
-            _0x2b023f || _0x3e9b80 || _0x326f18 || _0x10ae0b || (_0x5030b4['stopPropagation'](), _0x5030b4['preventDefault'](), this[_0x314e59(0x151)](), this[_0x314e59(0x197)]());
+                _0x10ae0b = this[_0x314e59(0x17b)]?.['contains'](_0x28b653),
+                _gamesMenuCheck = this['gamesMenu']?.['contains'](_0x28b653);
+            _0x2b023f || _0x3e9b80 || _0x326f18 || _0x10ae0b || _gamesMenuCheck || (_0x5030b4['stopPropagation'](), _0x5030b4['preventDefault'](), this[_0x314e59(0x151)](), this['hideGamesMenu'](), this[_0x314e59(0x197)]());
         }, window[_0x17eb80(0x1e1)](_0x17eb80(0xe3), this[_0x17eb80(0x1d8)], !0x0), this[_0x17eb80(0x1b4)] = _0x1e5ec4 => {
             const _0x2d251b = _0x17eb80;
             _0x2d251b(0x1ca) === _0x1e5ec4[_0x2d251b(0x162)] && this[_0x2d251b(0x100)]?.[_0x2d251b(0x1da)][_0x2d251b(0x16c)]('active') && this[_0x2d251b(0x197)]();
@@ -473,6 +511,67 @@ export default class StartMenu {
                 _0x3227e2['relatedTarget'] && (_0x3227e2[_0x2538c6(0x195)]['closest'](_0x2538c6(0x1f8)) || _0x3227e2[_0x2538c6(0x195)] === this[_0x2538c6(0x17b)]) || this['hideRecentlyUsedMenu']();
             });
         }
+    } ['initGamesButton']() {
+        const _btn = document.getElementById('menu-games');
+        if (!_btn || !this['startMenu']) return;
+
+        // Remove existing arrow if present to avoid duplicates on re-init
+        const _existingArrow = _btn.querySelector('.more-arrow');
+        if (_existingArrow) _existingArrow.remove();
+
+        const _span = document.createElement('span');
+        _span.className = 'more-arrow';
+        _btn.appendChild(_span);
+
+        _btn.addEventListener('mouseenter', () => this.showGamesMenu());
+        _btn.addEventListener('mouseleave', (e) => {
+            if (e.relatedTarget && (e.relatedTarget.closest('.games-menu') || e.relatedTarget === this['gamesMenu'])) return;
+            this.hideGamesMenu();
+        });
+        this['gamesMenu'].addEventListener('mouseleave', (e) => {
+            if (e.relatedTarget && (e.relatedTarget === _btn || e.relatedTarget.closest('#menu-games'))) return;
+            this.hideGamesMenu();
+        });
+    } ['showGamesMenu']() {
+        if (!this['gamesMenu'] || !this['startMenu']) return;
+        const _btn = this['startMenu'].querySelector('#menu-games');
+        const _menu = this['gamesMenu'];
+        if (!_btn || !_menu) return;
+
+        _menu.style.display = 'block';
+        _menu.style.visibility = 'hidden';
+
+        const _btnRect = _btn.getBoundingClientRect();
+        const _menuRect = _menu.getBoundingClientRect();
+
+        // Calculate position relative to viewport (since appended to body)
+        let _top = _btnRect.top;
+        let _left = _btnRect.left - _menuRect.width;
+
+        // If off-screen left, position to right
+        if (_left < 0) {
+            _left = _btnRect.right;
+        }
+
+        // Ensure vertical alignment if menu is taller than screen space
+        if (_top + _menuRect.height > window.innerHeight) {
+            _top = window.innerHeight - _menuRect.height;
+        }
+
+        _menu.style.position = 'absolute';
+        _menu.style.top = _top + 'px';
+        _menu.style.left = _left + 'px';
+        _menu.style.visibility = 'visible';
+        _menu.style.zIndex = '9999'; // Force high z-index
+
+        _btn.classList.add('active-submenu-trigger');
+    } ['hideGamesMenu']() {
+        if (this['gamesMenu']) {
+            this['gamesMenu'].classList.remove('active');
+            this['gamesMenu'].style.display = 'none';
+        }
+        const _btn = document.getElementById('menu-games');
+        if (_btn) _btn.classList.remove('active-submenu-trigger');
     } [_0x385705(0x10f)]() {
         const _0x4008fa = _0x385705,
             _0x13a749 = document['getElementById'](_0x4008fa(0x13d));
@@ -480,13 +579,18 @@ export default class StartMenu {
         _0x13a749['addEventListener'](_0x4008fa(0x1f2), () => this[_0x4008fa(0x147)]()), _0x13a749[_0x4008fa(0x1e1)](_0x4008fa(0x1fe), _0x20da3e => {
             const _0x395454 = _0x4008fa;
             _0x20da3e[_0x395454(0x195)] && (_0x20da3e[_0x395454(0x195)][_0x395454(0x1de)](_0x395454(0xfc)) || _0x20da3e['relatedTarget'] === this['allProgramsMenu']) || this['hideAllProgramsMenu']();
-        }), this[_0x4008fa(0x14c)][_0x4008fa(0x1e1)](_0x4008fa(0x1fe), _0x9ea598 => {
-            const _0x12be47 = _0x4008fa;
-            _0x9ea598['relatedTarget'] && (_0x9ea598[_0x12be47(0x195)] === _0x13a749 || _0x9ea598[_0x12be47(0x195)][_0x12be47(0x1de)](_0x12be47(0x1dc))) || this['hideAllProgramsMenu']();
-        }), this[_0x4008fa(0x100)][_0x4008fa(0xd1)](_0x4008fa(0xd7))[_0x4008fa(0x188)](_0x8b1d3f => {
-            const _0x2ff538 = _0x4008fa;
-            _0x8b1d3f[_0x2ff538(0x1e1)]('mouseenter', () => this[_0x2ff538(0x151)]());
-        });
+        }),
+            this['gamesMenu']?.addEventListener('mouseleave', (e) => {
+                if (e.relatedTarget && (e.relatedTarget.closest('#menu-games') || e.relatedTarget === document.getElementById('menu-games'))) return;
+                this.hideGamesMenu();
+            }),
+            this[_0x4008fa(0x14c)][_0x4008fa(0x1e1)](_0x4008fa(0x1fe), _0x9ea598 => {
+                const _0x12be47 = _0x4008fa;
+                _0x9ea598['relatedTarget'] && (_0x9ea598[_0x12be47(0x195)] === _0x13a749 || _0x9ea598[_0x12be47(0x195)][_0x12be47(0x1de)](_0x12be47(0x1dc))) || this['hideAllProgramsMenu']();
+            }), this[_0x4008fa(0x100)][_0x4008fa(0xd1)](_0x4008fa(0xd7))[_0x4008fa(0x188)](_0x8b1d3f => {
+                const _0x2ff538 = _0x4008fa;
+                _0x8b1d3f[_0x2ff538(0x1e1)]('mouseenter', () => this[_0x2ff538(0x151)]());
+            });
     } [_0x385705(0x147)]() {
         const _0x4b07c1 = _0x385705;
         if (!this[_0x4b07c1(0x14c)] || !this[_0x4b07c1(0x100)]) return;
@@ -499,6 +603,8 @@ export default class StartMenu {
             _0x5b2154 = window[_0x4b07c1(0x198)] - _0x24eb31[_0x4b07c1(0xe2)] + 'px',
             _0x32445b = {};
         _0x32445b[_0x4b07c1(0x1f0)] = _0x271142, _0x32445b[_0x4b07c1(0x117)] = _0x5b2154, _0x32445b[_0x4b07c1(0xe2)] = _0x4b07c1(0x142), _0x32445b['display'] = _0x4b07c1(0x13e), (Object[_0x4b07c1(0x1bb)](this[_0x4b07c1(0x14c)][_0x4b07c1(0x166)], _0x32445b), this['allProgramsMenu']['classList'][_0x4b07c1(0x1eb)](_0x4b07c1(0x14d)));
+    } ['hideAllProgramsMenu']() {
+        this[_0x385705(0x151)]();
     } [_0x385705(0x151)]() {
         const _0x2d25f1 = _0x385705;
         this[_0x2d25f1(0x14c)] && (this[_0x2d25f1(0x14c)][_0x2d25f1(0x1da)]['remove'](_0x2d25f1(0x14d)), this[_0x2d25f1(0x14c)][_0x2d25f1(0x166)][_0x2d25f1(0x10c)] = _0x2d25f1(0x21a));

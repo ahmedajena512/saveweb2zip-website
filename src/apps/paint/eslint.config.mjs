@@ -78,7 +78,7 @@ export default [
 			"no-sequences": "error",
 			"no-throw-literal": "error",
 			"no-unmodified-loop-condition": "error",
-			"no-unused-expressions": "error", // a && a() used a lot, could switch to a?.() etc. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+			"no-unused-expressions": "error", // Tip: `a && a();` can become `a?.();` https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
 			"no-useless-concat": "error",
 			"prefer-promise-reject-errors": "error",
 			"radix": "error",
@@ -208,7 +208,7 @@ export default [
 			// "@stylistic/object-curly-newline": ["error", ""], // TODO: investigate options
 			"@stylistic/object-curly-spacing": ["error", "always"],
 			"@stylistic/object-property-newline": ["error", { "allowAllPropertiesOnSameLine": true }],
-			// "@stylistic/one-var-declaration-per-line": ["error", "always"], // TODO maybe? (too bad there's no "usually" option, haha)
+			// "@stylistic/one-var-declaration-per-line": ["error", "always"], // TODO maybe? there is a risk of `let a, b = 0;` leaving `a` as undefined, but sometimes it just looks better, for related variables...
 			"@stylistic/operator-linebreak": ["error", "after"], // not sure about ternary operator tbh
 			// "@stylistic/padded-blocks": "off", // it depends, especially on how much stuff is in the block
 			// "@stylistic/padding-line-between-statements": ["error", ""], // TODO: investigate options, looks very complex

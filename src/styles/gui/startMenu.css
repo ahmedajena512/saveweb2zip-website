@@ -340,6 +340,7 @@
 }
 
 .all-programs-menu,
+.games-menu,
 .recently-used-menu {
     background: #f2f2f2;
     border: 1px solid #d0d0d0;
@@ -353,6 +354,7 @@
 }
 
 .all-programs-menu:before,
+.games-menu:before,
 .recently-used-menu:before {
     background: linear-gradient(180deg, #1c57ad 0, #2a70ce 50%, #5b9fe2);
     bottom: 0;
@@ -365,6 +367,7 @@
 }
 
 .all-programs-items,
+.games-menu-items,
 .recently-used-items {
     list-style: none;
     margin: 0;
@@ -375,6 +378,8 @@
 }
 
 .all-programs-item,
+.games-menu-item,
+.games-menu li,
 .recently-used-item {
     align-items: center;
     border: none;
@@ -391,11 +396,14 @@
 }
 
 .all-programs-item>img,
+.games-menu-item>img,
 .recently-used-item>img {
     pointer-events: none
 }
 
 .all-programs-item:hover,
+.games-menu-item:hover,
+.games-menu li:hover,
 .recently-used-item:hover {
     background-color: #2f71cd;
     color: #fff;
@@ -403,6 +411,8 @@
 }
 
 .all-programs-item:after,
+.games-menu-item:after,
+.games-menu li:after,
 .recently-used-item:after {
     background-color: transparent;
     content: "";
@@ -414,11 +424,15 @@
 }
 
 .all-programs-item:hover:after,
+.games-menu-item:hover:after,
+.games-menu li:hover:after,
 .recently-used-item:hover:after {
     background-color: #2f71cd
 }
 
 .all-programs-item:hover:before,
+.games-menu-item:hover:before,
+.games-menu li:hover:before,
 .recently-used-item:hover:before {
     background-color: #2f71cd;
     bottom: 0;
@@ -432,25 +446,30 @@
 }
 
 .all-programs-item *,
+.games-menu-item *,
+.games-menu li *,
 .recently-used-item * {
     transition: color .05s ease;
     z-index: 2
 }
 
 .all-programs-item:hover *,
+.games-menu-item:hover *,
+.games-menu li:hover *,
 .recently-used-item:hover * {
     color: #fff;
     filter: brightness(1.1)
 }
 
 .all-programs-item img,
+.games-menu li img,
 .recently-used-item img {
-    height: 16px;
-    left: 8px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 16px;
+    height: 16px !important;
+    left: 8px !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 16px !important;
     z-index: 2
 }
 
@@ -669,4 +688,23 @@
 
 .projects-bold {
     font-weight: 700
+}
+
+
+.more-arrow {
+    border-bottom: 3.5px solid transparent;
+    border-left: 3.5px solid #000;
+    border-top: 3.5px solid transparent;
+    content: "";
+    display: inline-block;
+    height: 0;
+    margin-left: 5px;
+    vertical-align: middle;
+    width: 0;
+    z-index: 5
+}
+
+
+.menu-item:hover .more-arrow {
+    border-left-color: #fff
 }

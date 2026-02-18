@@ -1022,12 +1022,8 @@
 	}
 
 	let current_language = base_language;
-	for (const accepted_language of accepted_languages) {
-		if (available_languages.indexOf(accepted_language) !== -1) {
-			current_language = accepted_language;
-			break;
-		}
-	}
+	// Force English language - skip browser language detection
+	// to prevent RTL layout issues when embedded in the desktop environment
 
 	function get_language() {
 		return current_language;

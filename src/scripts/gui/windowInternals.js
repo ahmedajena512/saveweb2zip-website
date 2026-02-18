@@ -110,9 +110,10 @@ export class WindowTemplates {
                 'width': _0x103946(0x100),
                 'height': '100%',
                 'scrolling': document[_0x103946(0xf0)][_0x103946(0x184)][_0x103946(0x168)](_0x103946(0x16b)) || _0x103946(0x17d) === _0x22e12e ? _0x103946(0x134) : 'no',
-                'sandbox': _0x103946(0x1a7)
+                'sandbox': _0x555d53 && _0x555d53['sandbox'] ? _0x555d53['sandbox'] : _0x103946(0x1a7)
             };
             for (const [_0x3a5d4d, _0x3e2345] of Object[_0x103946(0x140)](_0x260705)) _0x534b9b['setAttribute'](_0x3a5d4d, _0x3e2345);
+            _0x555d53 && _0x555d53['allow'] && _0x534b9b['setAttribute']('allow', _0x555d53['allow']);
         } ((_0x20296b, {
             skipHide: skipHide = !0x1
         } = {}) => {

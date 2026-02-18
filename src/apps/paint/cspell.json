@@ -14,6 +14,7 @@
 		"*.icns",
 		"*.wav",
 		"*.psd",
+		"*.mp4",
 		"localization"
 	],
 	"words": [
@@ -37,6 +38,7 @@
 		"Bresenham",
 		"Bresenham's",
 		"browserconfig",
+		"checkmarks",
 		"clipart",
 		"Clippy",
 		"clmtrackr",
@@ -292,6 +294,7 @@
 		"Winamp",
 		"ＷＩＮＴＲＡＰ",
 		"woah",
+		"Wolfie",
 		"xfconf",
 		"xtras",
 		"zoomable",

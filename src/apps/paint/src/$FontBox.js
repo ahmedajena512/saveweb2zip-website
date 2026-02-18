@@ -134,6 +134,21 @@ function $FontBox() {
 	$w.title(localize("Fonts"));
 	$w.$content.append($fb);
 	$w.center();
+
+	// Hotfix for bug where the font dropdown would close immediately when clicked in Chrome.
+	// Code in $Window.js (from os-gui.js but PATCHED) is trying to focus the dropdown when it's already focused,
+	// or focusing the window content area. Either can cause the dropdown to close.
+	// The code patches in $Window.js specific to this repo may be related to why this is happening.
+	// See: "PATCHED; I want focus tracking in a tool window"
+	// Maybe I don't want it for the font window! (What tool window did I want it for? A history panel, or...?)
+	// I could probably adjust my patch to not apply to the font box, but this is a quick fix.
+	$family[0].focus = () => {
+		// console.trace("$FontBox: Font family select focus() called");
+	};
+	$w.$content[0].focus = () => {
+		// console.trace("$FontBox: Font box window content area focus() called");
+	};
+
 	return $w;
 
 

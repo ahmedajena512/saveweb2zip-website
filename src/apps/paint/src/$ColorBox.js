@@ -9,7 +9,7 @@ import { $G, E, make_canvas } from "./helpers.js";
  * Used by the Colors Box and by the Edit Colors dialog.
  * @param {string | CanvasPattern} color
  * @returns {JQuery<HTMLDivElement>}
- **/
+ */
 function $Swatch(color) {
 	const $swatch = $(E("div")).addClass("swatch");
 	const swatch_canvas = make_canvas();
@@ -91,7 +91,7 @@ function $ColorBox(vertical) {
 		let double_click_button = null;
 		let double_click_tid;
 		// @TODO: handle left+right click at same time
-		// can do this with mousedown instead of pointerdown, but may need to improve eye gaze mode click simulation
+		// can do this with mousedown instead of pointerdown, but may need to improve Dwell Clicker click simulation
 		$b.on("pointerdown", (e) => {
 			// @TODO: allow metaKey for ternary color, and selection cropping, on macOS?
 

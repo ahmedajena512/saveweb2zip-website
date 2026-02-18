@@ -141,8 +141,10 @@ let redos = [];
 let file_name;
 /** @type {string | undefined} */
 let file_format;
-/** For saving over opened file on Save. Can be different type for File System Access API vs Electron.
- * @type {UserFileHandle} */
+/**
+ * For saving over opened file on Save. Can be different type for File System Access API vs Electron.
+ * @type {UserFileHandle}
+ */
 let system_file_handle;
 /** @type {boolean} */
 let saved = true;
@@ -173,6 +175,8 @@ let pointer_over_canvas = false;
 /** @type {boolean} */
 let update_helper_layer_on_pointermove_active = false;
 
-/** works in client coordinates, NOT canvas coordinates
- * @type {{ x: number, y: number, pointerId: number, pointerType: string, isPrimary: boolean }[]} */
+/**
+ * works in client coordinates, NOT canvas coordinates
+ * @type {{ x: number, y: number, pointerId: number, pointerType: string, isPrimary: boolean }[]}
+ */
 let pointers = [];

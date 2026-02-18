@@ -7,8 +7,8 @@
 // USAGE: load an image into the app, then paste this code into the browser console, updating parameters as needed.
 
 // HACK: Using unnecessary-looking "../src" so that TypeScript can follow the path, but in the browser,
-// pasting this script into the console, it will be relative to the current page's URL, but the ".." will be ignored,
-// assuming the app is hosted at the root of the domain.
+// when pasting this script into the console, it will be relative to the current page's URL, and the ".." will be ignored,
+// as there's nothing higher up than "/", assuming the app is hosted at the root of the domain.
 // TypeScript still doesn't like the top-level await because there are no exports, but
 // exports are not valid in the JS console. So, ignore the errors.
 // @ts-ignore
