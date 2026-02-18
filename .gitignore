@@ -3,5 +3,7 @@ node_modules
 .vercel
 dist
 build
+!src/apps/paint/lib/os-gui/build/
+!src/apps/paint/lib/os-gui/build/*
 .DS_Store
 Thumbs.db
